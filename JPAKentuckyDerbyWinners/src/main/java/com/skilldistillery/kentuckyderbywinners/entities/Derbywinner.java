@@ -1,18 +1,20 @@
 package com.skilldistillery.kentuckyderbywinners.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class DerbyWinner {
+public class Derbywinner {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String name;
 	
+	@Column(name="year_won")
 	private int yearWon;
 	
 	private double time;
@@ -25,7 +27,7 @@ public class DerbyWinner {
 	
 	
 
-	public DerbyWinner() {
+	public Derbywinner() {
 		super();
 	}
 
@@ -117,7 +119,7 @@ public class DerbyWinner {
 
 	@Override
 	public String toString() {
-		return "DerbyWinner [id=" + id + ", name=" + name + ", yearWon=" + yearWon + ", time=" + time + ", color="
+		return "Derbywinner [id=" + id + ", name=" + name + ", yearWon=" + yearWon + ", time=" + time + ", color="
 				+ color + ", trainer=" + trainer + ", jockey=" + jockey + "]";
 	}
 

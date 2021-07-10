@@ -17,7 +17,7 @@ class DerbyTest {
 	
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private DerbyWinner dw;
+	private Derbywinner dw;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -32,7 +32,7 @@ class DerbyTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		dw = em.find(DerbyWinner.class, 1);
+		dw = em.find(Derbywinner.class, 1);
 	}
 
 	@AfterEach

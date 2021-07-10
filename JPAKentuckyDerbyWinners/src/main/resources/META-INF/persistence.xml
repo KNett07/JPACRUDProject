@@ -6,7 +6,7 @@
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider
     </provider>
     <!--list entities here  -->
-    <class>com.skilldistillery.kentuckyderbywinners.entities.DerbyWinner</class>
+    <class>com.skilldistillery.kentuckyderbywinners.entities.Derbywinner</class>
     
     <!--end entities here  -->
 
