@@ -4,6 +4,14 @@ import com.skilldistillery.kentuckyderbywinners.entities.Derbywinner;
 
 public interface DerbyDAO {
 	
- public Derbywinner findById(int id);
+  Derbywinner findById(int id);
+  
+  Derbywinner findByYearWon(int yearWon);
+
+Derbywinner updateWinner(String newName);
+  
+  
+  
+  
 
 }
