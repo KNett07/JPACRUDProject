@@ -30,16 +30,6 @@ public class DerbyDAOJPAImpl implements DerbyDAO {
 		
 		return dw;
 	}
-	
-	  public boolean destroy(int id) {
-			
-			em.remove(id);
-			
-		  
-		return false;
-		  
-		  
-	  }
 
 	@Override
 	public Derbywinner findByYearWon(int yearWon) {
@@ -49,21 +39,37 @@ public class DerbyDAOJPAImpl implements DerbyDAO {
 	}
 
 	@Override
-	public Derbywinner updateWinner(String newName) {
+	public Derbywinner updateWinner(Derbywinner dw) {
+		Derbywinner dwdb = em.find(Derbywinner.class, dw.getId());
 		
 		
-		em.persist(newName);
+		dwdb.setName(dw.getName());
+		dwdb.setYearWon(dw.getYearWon());
+		dwdb.setTime(dw.getTime());
+		dwdb.setColor(dw.getColor());
+		dwdb.setTrainer(dw.getTrainer());
+		dwdb.setJockey(dw.getJockey());
+		
+//		TODO for all fields
+		
 //		TODO UPDATE logic look at class notes - take in command object, id then use em.find
 //		TODO store, update w setters, use values of unmanaged entity to update managed e
+		em.flush();
 		
-		
-		return em.find(Derbywinner.class, newName);	
+		return dwdb;	
 		
 	}
 
 	@Override
-	public boolean deleteWinner(String dw) {
-		return false;
+	public boolean deleteWinner(int id) {
+		
+		Derbywinner dwdb = em.find(Derbywinner.class, id);
+		
+		em.remove(dwdb);
+		
+		boolean deleteDone = !em.contains(dwdb);
+
+		return deleteDone;
 	}
 
 	@Override

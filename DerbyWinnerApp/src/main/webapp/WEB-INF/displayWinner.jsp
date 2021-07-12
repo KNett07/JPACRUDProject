@@ -26,7 +26,7 @@
 
 				<li><strong>ID: </strong>${winner.id }</li>
 				<li><strong>Name: </strong>${winner.name }</li>
-				<li><strong>Year Won: </strong>${winner.yearWon.substring(0,4) }</li>
+				<li><strong>Year Won: </strong>${winner.yearWon }</li>
 				<li><strong>Time: </strong>${winner.time }</li>
 				<li><strong>Color: </strong>${winner.color }</li>
 				<li><strong>Trainer : </strong>${winner.trainer }</li>

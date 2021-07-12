@@ -10,13 +10,15 @@ public interface DerbyDAO {
   
   Derbywinner findByYearWon(int yearWon);
 
-Derbywinner updateWinner(String newName);
+Derbywinner updateWinner(Derbywinner dw);
   
-  boolean deleteWinner(String dw);
+  boolean deleteWinner(int id);
   
   List<Derbywinner> findAll();
 
 Derbywinner findByName(String name);
+
+Derbywinner create(Derbywinner dw);
   
   
   

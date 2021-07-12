@@ -23,7 +23,7 @@
 
 				<li><strong>ID: </strong>${winner.id }</li>
 				<li><strong>Name: </strong>${winner.name }</li>
-				<li><strong>Year Won: </strong>${winner.yearWon.substring(0,4) }</li>
+				<li><strong>Year Won: </strong>${winner.yearWon }</li>
 				<li><strong>Time: </strong>${winner.time }</li>
 				<li><strong>Color: </strong>${winner.color }</li>
 				<li><strong>Trainer: </strong>${winner.trainer }</li>
@@ -39,7 +39,7 @@
 		
 	</c:choose>
 	
-	<form action="DeleteWinner.do" method="POST">
+	<form action="confirmDelete.do" method="POST">
 		<input type="hidden" name="id" value="${winner.id }">
 		<input type="submit" value="Confirm and Delete" />
 	</form>

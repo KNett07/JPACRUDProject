@@ -5,7 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Winner's Circle</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -22,7 +26,7 @@
 				<c:forEach items="${allWinners }" var="winner">
 					<tr>
 					<!--  href to winner's sites jsp?-->
-					<td><a href="SearchById.do?id=${winner.id }" >${winner.id }</a></td>
+					<td>${winner.id }</td>
 					<td><a href="SearchById.do?id=${winner.id}">${winner.name}</a></td>
 					</tr>
 				</c:forEach>

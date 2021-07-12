@@ -8,7 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Kentucky Derby Winners</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+	crossorigin="anonymous">
 
 </head>
 <body>
@@ -22,32 +26,42 @@
 		<a href="ListAllWinners.do">List all Winners</a>
 	</p>
 
-
-	<form action="SearchById.do" method="POST">
-		<input type="hidden" name="id" value="${dw.id }"> <input
-			type="submit" value="Search By Id" />
-	</form>
-
-	<form action="SearchByName.do" method="POST">
-		<input type="hidden" name="id" value="${dw.id }"> <input
-			type="submit" value="Search By Name" />
-	</form>
-
 	<p>
 		<a href="AddWinner.do">Add a Winner</a>
 	</p>
+	<br>
+	<p>Search Winners by Id</p>
+	<form action="SearchById.do" method="GET">
+		<input type="text" name="id" size="4"> <input type="submit"
+			value="Search By Id" />
+	</form>
+	<br>
+
+	<!-- <p>Search Winners by Name</p>
+
+	<form action="SearchByName.do" method="POST">
+		<input type="text" name="name" size="4"> <input type="submit"
+			value="Search By Name" />
+	</form>
+	<br> -->
 
 
-	<p>
-		<a href="UpdateWinner.do">Update a Winner</a>
-	</p>
-	<p>
-		<a href="DeleteWinner.do">Delete a Winner</a>
-	</p>
+	<p>Enter an Id to Update a Winner</p>
+	<form action="UpdateWinner.do" method="POST">
+		<input type="text" name="id" size="4"> <input type="submit"
+			value="Update" />
+	</form>
+	<br>
+	<p>Enter an Id to Delete a Winner</p>
+	<form action="DeleteWinner.do" method="POST">
+		<input type="text" name="id" size="4"> <input type="submit"
+			value="Delete" />
+	</form>
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		crossorigin="anonymous"></script>
 
 </body>
 </html>
