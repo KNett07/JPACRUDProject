@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Winner Details</title>
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -16,9 +16,11 @@
 
 </head>
 <body>
-	<p>
-		<a href="index.jsp">Home</a>
-	</p>
+		<p><a href="home.do">Home</a></p>
+		
+		<h1>Derby Horse Details:</h1>
+		
+		
 	<c:choose>
 		<c:when test="${not empty winner }">
 

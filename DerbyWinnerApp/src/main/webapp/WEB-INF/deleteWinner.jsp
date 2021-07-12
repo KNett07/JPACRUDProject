@@ -14,6 +14,8 @@
 </head>
 <body>
 
+<p><a href="home.do">Home</a></p>
+
 <p>Are you sure you want to delete this winner?</p>
 
 	<c:choose>

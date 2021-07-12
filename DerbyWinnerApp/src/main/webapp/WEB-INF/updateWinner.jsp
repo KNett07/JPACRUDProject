@@ -15,7 +15,7 @@
 
 </head>
 <body>
-<p><a href="index.jsp">Home</a></p>
+<p><a href="home.do">Home</a></p>
 	
 		<h5>Enter the Winner's NEW details and then click "Update Winner" to update it in the database: </h5>
 				

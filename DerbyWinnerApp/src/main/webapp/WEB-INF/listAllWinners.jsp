@@ -15,7 +15,7 @@
 
 <h1>Click on a Name to be redirected to a Winner's Website</h1>
 
-<p><a href="index.jsp">Home</a></p>
+<p><a href="home.do">Home</a></p>
 	
 	<h2>Winners:</h2>
 	

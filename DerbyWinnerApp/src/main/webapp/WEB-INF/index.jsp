@@ -20,8 +20,8 @@
 	<h1>Welcome to the Kentucky Derby Winner's Circle</h1>
 
 	<h2>View or add a winner, check out their personal page or just
-		kick 'em out to pasture</h2>
-
+		kick 'em out to pasture</h2> <br>
+<p>Do you want to: </p> <br>
 	<p>
 		<a href="ListAllWinners.do">List all Winners</a>
 	</p>
@@ -30,6 +30,9 @@
 		<a href="AddWinner.do">Add a Winner</a>
 	</p>
 	<br>
+	
+	<p>Or do you want to: </p> <br>
+	
 	<p>Search Winners by Id</p>
 	<form action="SearchById.do" method="GET">
 		<input type="text" name="id" size="4"> <input type="submit"
