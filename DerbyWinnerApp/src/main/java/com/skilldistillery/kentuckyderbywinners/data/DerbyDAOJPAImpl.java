@@ -1,8 +1,8 @@
 package com.skilldistillery.kentuckyderbywinners.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -25,30 +25,16 @@ public class DerbyDAOJPAImpl implements DerbyDAO {
 	}
 	
 	public Derbywinner create(Derbywinner dw) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPACrudProject");
-		EntityManager em = emf.createEntityManager();
-		
-		em.getTransaction().begin();
 		
 		em.persist(dw);
-		
-		em.getTransaction().commit();
 		
 		return dw;
 	}
 	
 	  public boolean destroy(int id) {
-		  EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPACrudProject");
-			EntityManager em = emf.createEntityManager();
-			
-			em.getTransaction().begin();
 			
 			em.remove(id);
 			
-			em.flush();
-			
-			em.getTransaction().commit();
-		  
 		  
 		return false;
 		  
@@ -58,26 +44,41 @@ public class DerbyDAOJPAImpl implements DerbyDAO {
 	@Override
 	public Derbywinner findByYearWon(int yearWon) {
 		
-		
+//		TODO jpql not em.find
 		return em.find(Derbywinner.class, yearWon);
 	}
 
 	@Override
 	public Derbywinner updateWinner(String newName) {
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPACrudProject");
-		EntityManager em = emf.createEntityManager();
-		
-		em.getTransaction().begin();
 		
 		em.persist(newName);
+//		TODO UPDATE logic look at class notes - take in command object, id then use em.find
+//		TODO store, update w setters, use values of unmanaged entity to update managed e
 		
-		em.flush();
-		
-		em.getTransaction().commit();
 		
 		return em.find(Derbywinner.class, newName);	
 		
+	}
+
+	@Override
+	public boolean deleteWinner(String dw) {
+		return false;
+	}
+
+	@Override
+	public List<Derbywinner> findAll() {
+		
+		String jpql = "SELECT w from Derbywinner w";
+		List<Derbywinner> listAll = em.createQuery(jpql, Derbywinner.class).getResultList();
+		
+		return listAll;
+	}
+
+	@Override
+	public Derbywinner findByName(String name) {
+		
+		return em.find(Derbywinner.class, name);
 	}
 	
 	

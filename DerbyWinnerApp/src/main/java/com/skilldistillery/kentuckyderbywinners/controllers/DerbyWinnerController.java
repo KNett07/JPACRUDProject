@@ -1,5 +1,7 @@
 package com.skilldistillery.kentuckyderbywinners.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.skilldistillery.kentuckyderbywinners.data.DerbyDAO;
 import com.skilldistillery.kentuckyderbywinners.entities.Derbywinner;
 
-@RestController
+//@RestController
 @Controller
 public class DerbyWinnerController {
 	
@@ -19,20 +21,19 @@ public class DerbyWinnerController {
 	
 	@RequestMapping(path= {"/", "home.do"})
 	public String index(Model model) {
-		model.addAttribute("winner", dao.findById(1)); //debug
 		return "index";
 	}
 	
 
-	@RequestMapping("/test/create/{input}")
-	public String testCreate(@PathVariable("input") String insert ) {
+	@RequestMapping("AddWinner.do")
+	public String createWinner( ) {
 		
 		
-		return "Hello World" + insert;
+		return "createWinner";
 		
 	}
 	
-	@RequestMapping("/test/update/{id}/{newName}")
+	@RequestMapping("UpdateWinner.do")
 	public String testUpdate(@PathVariable("id") String id,
 							@PathVariable("newName") String newName ) {
 		int horseId = Integer.parseInt(id);
@@ -45,21 +46,47 @@ public class DerbyWinnerController {
 		
 		String updatedTrainer = dwUpdate.getTrainer();
 		
-		return currentTrainer + "/n" + updatedTrainer;
+		return "updateWinner";
 		
 	}
 	
-	@RequestMapping("/test/delete/{input}")
+	@RequestMapping("DeleteWinner.do")
 	public String testDelete(@PathVariable("input") String delete ) {
 		
-		return "Hello World" + delete;
+		return "deleteWinner";
 		
 	}
 	
-	@RequestMapping("/test/read/{input}")
-	public String testRead(@PathVariable("input") String input ) {
-		int id = Integer.parseInt(input);
-		return dao.findById(id).toString();
+	
+	@RequestMapping("ListAllWinners.do")
+	
+	public String allWinners(Model model) {
+		List<Derbywinner> listAll = dao.findAll();
+		
+		model.addAttribute("allWinners", listAll);
+		
+		return "listAllWinners";
+		
+	}
+	
+	@RequestMapping("SearchById.do")
+	
+	public String searchById(int id) {
+		
+		dao.findById( id);
+		
+		return "displayWinner";
+		
+	}
+	
+	@RequestMapping("SearchByName.do")
+	
+	public String searchByName(String name) {
+		List<Derbywinner> listAll = dao.findAll();
+		
+		dao.findByName(name);
+		
+		return "displayWinner";
 		
 	}
 	
